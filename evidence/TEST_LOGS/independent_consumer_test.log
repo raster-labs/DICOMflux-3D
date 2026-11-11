@@ -1,0 +1,14 @@
+# Redacted Verification Transcript
+command: cargo test --locked --manifest-path examples/independent-consumer/Cargo.toml
+exit_code: 0
+qualification_tier: BoundedDevelopmentHost
+--- STDOUT ---
+
+running 1 test
+test tests::independent_consumer_end_to_end ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+--- STDERR ---
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.06s
+     Running unittests src/main.rs (examples/independent-consumer/target/debug/deps/dicomflux_3d_independent_consumer-948cd16fbb327451)

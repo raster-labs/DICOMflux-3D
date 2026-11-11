@@ -1,0 +1,10 @@
+# Redacted Verification Transcript
+command: cargo run --locked --manifest-path examples/independent-consumer/Cargo.toml
+exit_code: 0
+qualification_tier: BoundedDevelopmentHost
+--- STDOUT ---
+dicomflux-3d independent consumer smoke: PASS (frame=64x64 i16, volume=64x64x16, gpu_backend=Some(Metal), qualification=BoundedDevelopmentHost, cold_max_diff=0, warm_max_diff=0)
+--- STDERR ---
+   Compiling dicomflux-3d-independent-consumer v0.1.0 (<WORKSPACE_ROOT>/examples/independent-consumer)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.36s
+     Running `examples/independent-consumer/target/debug/dicomflux-3d-independent-consumer`

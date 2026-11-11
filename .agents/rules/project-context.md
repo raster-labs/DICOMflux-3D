@@ -17,16 +17,17 @@ description: "Cached project architecture map, key entry points, commands, and c
 ## 2. Architecture & Key Directories
 - `docs/designs/fs01-foundation.md`: Approved EGM technical specification and 40-target `[Create]` implementation plan (`FS01-R01`–`R18`, `FS01-T01`–`T24`).
 - `docs/handoff/`: Sealed authority specifications (`DICOMflux-3D` `v0.2.0`, `DICOMflux` Manifesto `v1.3.1` & `D0`, `Flux Imaging Suite` `F0`). Never modify baseline `docs/handoff/DICOMflux-3D/FS01_Test_Case_Manifest_v0.2.0.json`.
-- Planned `src/` modules (7 private modules re-exported selectively via `src/lib.rs`):
+- Implemented `src/` modules (7 private modules re-exported selectively via `src/lib.rs`):
   - `error.rs`: 11-variant `RenderError` + 9-variant `LimitPoolKind` with redacted `Debug`/`Display`.
   - `resource.rs`: `ResourceLimits`, `ResourceTracker` (owns `ResourceLimits`), `pub(crate) BudgetGuard`, `PoolUsageSnapshot`, `OperationId`, `CancellationToken`.
   - `image.rs`: `SourceIdentity`, 3-variant safe `DecodedFrameLease` (`Bytes`/`WordsI16`/`WordsU16`), `FrameDescriptor` (with `ColorModel` & container-domain `PixelPadding`), `CheckedFrame`, `admit_frame`.
   - `spatial.rs`: `f64` LPS `LpsPointMm`, `PixelIndex2D`, `PatientPlane` (`2 x 2` Gram-matrix inverse).
   - `volume.rs`: Constant-memory `f64` regular 3D `VolumeDescriptor`, `CheckedVolume`, `admit_volume`.
   - `presentation.rs`: `IntensityTransform`, `VoiParameters`, `VoiRequest`, `DisplayEncoding::UncalibratedSrgbU8`, `OutputDescriptor`, `RenderReceipt`, `RenderedImage`.
-  - `rendering/`: `cpu.rs` (`render_reference` `f64` oracle) and `gpu/` (`capabilities.rs`, `pitch.rs`, `uniforms.rs`, `voi_linear.wgsl`, `pipeline.rs`, `mod.rs` — quarantined `wgpu`).
-- `examples/independent-consumer/`: Outside-workspace consumer crate (`[workspace]` excluded) for `FS01-T01`.
-- `examples/generate_evidence.rs` & `evidence/`: Reproducible benchmark (`FS01-T22`) and SHA-256-manifested evidence bundle.
+  - `rendering/`: `cpu.rs` (`render_reference` `f64` oracle) and `gpu/` (`capabilities.rs`, `pitch.rs`, `uniforms.rs`, `voi_linear.wgsl` [SHA-256 `b4b0ad1b6fd0a1b24555d83544d1bfe4390bc11e296a674c7ec7a66818383701`], `pipeline.rs`, `mod.rs` — quarantined `wgpu`).
+- `tests/`: `37` workspace tests (`18` lib unit + `8` `frame_and_voi_oracle` + `4` `fuzz_and_governance` + `5` `gpu_parity_and_faults` + `2` `spatial_and_volume`).
+- `examples/independent-consumer/`: Outside-workspace consumer crate (`[workspace]` excluded, `1` end-to-end test) for `FS01-T01`.
+- `examples/generate_evidence.rs` & `evidence/`: Reproducible benchmark (`FS01-T22`) and SHA-256-manifested evidence bundle (`21 / 24` `PASS` on `BoundedDevelopmentHost`; `FS01-T19`–`T21` `NOT_RUN` `OPEN_PENDING_TARGET_HARDWARE`).
 
 ## 3. Build, Test, Lint & Evidence Commands
 Prepend Homebrew `rustup` path on macOS when needed:

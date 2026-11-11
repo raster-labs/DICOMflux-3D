@@ -1,0 +1,250 @@
+{
+  "cases": [
+    {
+      "evidence_uri": "evidence/TEST_LOGS/independent_consumer_run.log",
+      "fixture_sha256": "9e6e520fdcbaeea2eba7e90e9fd02d2b0c8ed5ccc948ef37e37b1ca0df47f4ed",
+      "id": "FS01-T01",
+      "name": "Build and independent consumer",
+      "objective": "Actual Rust crate and outside-workspace consumer",
+      "observed_result": "Standalone outside-workspace crate compiled and passed --locked test & smoke run (Metal/IntegratedGpu/BoundedDevelopmentHost, max_abs_diff <= 1).",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "1c39cff42a378ccfa55131e905c5e9447635432b68bbfcfb24d16588a5c9e36d",
+      "id": "FS01-T02",
+      "name": "Signed 12-bit i16",
+      "objective": "Sign-extension and immutable source",
+      "observed_result": "fs01_t02_signed_12bit_i16_sign_extension_and_immutability PASS: canonical 12-bit i16 preserved, SHA-256 immutable, dirty upper sign bits rejected.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "2f5ca7c468b5c080948bb7529dc56b8cee1502426cf92835d5667db2d44dd413",
+      "id": "FS01-T03",
+      "name": "Unsigned 16-bit",
+      "objective": "BitsStored/HighBit and source preservation",
+      "observed_result": "fs01_t03_unsigned_16bit_precision_and_highbit_rules PASS: canonical u16 12/16-bit admitted, non-canonical HighBit and dirty upper bits rejected.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "46f90e6d352e06c67db586824002f5b1bcf312c4a4e3ed4baa9dc2d4eba01bad",
+      "id": "FS01-T04",
+      "name": "DICOM LINEAR VOI",
+      "objective": "Endpoints, midpoint, width one and rounding",
+      "observed_result": "fs01_t04_dicom_linear_voi_endpoints_midpoint_width_one_and_rounding PASS: PS3.3 C.11.2.1.2.1 endpoints, w=1 binary threshold, and round_ties_even verified.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "e87a0706d2afd39ad88c38ce0cab4c3e522f01629e733c0f4d1eede6c14ae50b",
+      "id": "FS01-T05",
+      "name": "Rescale slope/intercept",
+      "objective": "Finite rescale and source preservation",
+      "observed_result": "fs01_t05_rescale_slope_intercept_ct_hu_and_negative_slope PASS: CT HU (slope=1, intercept=-1024), fractional, negative, and zero slopes verified without source mutation.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "bc9ae4c7405fb1d68372d4a1578215227fe708f44e2a876763a9d41878f55563",
+      "id": "FS01-T06",
+      "name": "Pixel padding",
+      "objective": "Padding/range masking and background policy",
+      "observed_result": "fs01_t06_pixel_padding_value_and_range_before_rescale PASS: container-domain Single(-2000) and Range [-3024..-2000] bypass rescale/VOI/polarity.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "06424edbfb6aff1008eb3138fec532c1f2f3cf6eebdbce417badd99c76d70c46",
+      "id": "FS01-T07",
+      "name": "MONOCHROME1/2",
+      "objective": "Polarity and final presentation stage",
+      "observed_result": "fs01_t07_monochrome1_vs_monochrome2_polarity PASS: final-stage 255.0 - y Monochrome1 inversion verified with immutable source samples.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "62fcdf286d3ca1e20a15ac89d96c06aba3836ea683c47b11fadb9d390ec49605",
+      "id": "FS01-T08",
+      "name": "Invalid input",
+      "objective": "Nonfinite values, illegal stride, short data",
+      "observed_result": "fs01_t08_invalid_descriptors_and_unsupported_profiles PASS: malformed strides/lengths, non-finite/overflowing VOI, multiframe, non-16-bit, colour/palette, and LUT profiles rejected.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "c1ed9ddf2fc3cd736742e70f67f612b7da6f4e6e7d0fa2f0aad6e802c7cee37a",
+      "id": "FS01-T09",
+      "name": "Budgets and overflow",
+      "objective": "Huge dimension and bounded refusal",
+      "observed_result": "fs01_t09_resource_budgets_exact_boundary_and_overflow PASS: exact limit succeeds, limit + 1 and u32::MAX overflow refuse before allocation across CPU/GPU pools.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "8ca0b92719b92cf0325636f3489f017db928ecc88249a9664649bb7b5d882bd5",
+      "id": "FS01-T10",
+      "name": "2D patient plane",
+      "objective": "LPS spacing and orientation phantom",
+      "observed_result": "fs01_t10_patient_plane_lps_phantom_and_oblique_roundtrip PASS: phantom (4,3)->(12,26,30) mm and oblique Gram-inverse round-trips < 1e-12.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "e896a896efe62a2c7bc9939cd12f76f6e2f7478e1b76f4d546c11505924e54e0",
+      "id": "FS01-T11",
+      "name": "Synthetic regular volume",
+      "objective": "Affine and singular/irregular rejection",
+      "observed_result": "fs01_t11_checked_volume_regular_hand_and_singular_sheared_rejection PASS: O(1) right/left-handed orthogonal 4x4 affines admitted; singular & sheared gantry-tilted grids rejected.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "c9f0c0ac9ca433afcb2685bc95d44ae94d8fba7da331bd2ec85957d959c27b2f",
+      "id": "FS01-T12",
+      "name": "CPU/GPU agreement",
+      "objective": "Hardware or software adapter labelled with tolerance",
+      "observed_result": "fs01_t12_cpu_vs_gpu_parity PASS on Metal/IntegratedGpu/BoundedDevelopmentHost: 0-LSB error on padded/clamped/w=1 pixels and <= 1 LSB across full i16/u16 sweeps.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "06e941f87f5bda51e268008001012425e18e89ba94e73895143087f8957cca55",
+      "id": "FS01-T13",
+      "name": "GPU capability refusals",
+      "objective": "Unsupported format or absent adapter",
+      "observed_result": "fs01_t13_gpu_capability_and_adapter_refusals PASS: AllowedBackends::none() -> NoSuitableAdapter, missing integer texture format -> UnsupportedGpuCapability.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "eed956ebd2b0cc15dd2f25f9a999c67d7ffc49d3ac3e1da6957b677783551c35",
+      "id": "FS01-T14",
+      "name": "Repeated window change",
+      "objective": "Source unchanged; no decoder/reupload claim",
+      "observed_result": "fs01_t14_repeated_wl_residency_subslice_and_retire_before_replace PASS: warm W/L reports source_cache_hit=true and source_bytes_uploaded=0; subslice offsets isolated.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "7273f1f214bdb69b96cbb6d1711d2ff2329d257e117395a4a082e5706aa0018d",
+      "id": "FS01-T15",
+      "name": "GPU cancellation/loss",
+      "objective": "In-flight leases and typed failure",
+      "observed_result": "fs01_t15_public_cancellation_and_context_reinit + white-box OOM/device-loss/post-submit-cancel InFlightLedger tests PASS with zero leaked quota.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/COVERAGE_AND_FUZZ.md",
+      "fixture_sha256": "1cc7bd565b6b02b52926691f480eb6f1c3f7a8e876b62cdfa7d3d3861eb97506",
+      "id": "FS01-T16",
+      "name": "Descriptor fuzz",
+      "objective": "No crash/UB/unbounded allocation",
+      "observed_result": "fs01_t16_seeded_splitmix64_descriptor_and_voi_fuzz PASS: 100,000 deterministic SplitMix64 iterations (seed 0xDF3D_F501_2026_1110), zero panics, zero leaked bytes.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "b4b0ad1b6fd0a1b24555d83544d1bfe4390bc11e296a674c7ec7a66818383701",
+      "id": "FS01-T17",
+      "name": "Output receipt",
+      "objective": "Output dimensions/stride/provenance",
+      "observed_result": "fs01_t17_offscreen_output_descriptor_and_receipt_provenance PASS: tight row_stride_bytes==width, UncalibratedSrgbU8, shader_sha256=b4b0ad1b6fd0a1b24555d83544d1bfe4390bc11e296a674c7ec7a66818383701.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/SBOM.json",
+      "fixture_sha256": "263d07e1af9ab0938aa96540269eee6d51a8bbc42eb849385c6e668e13865444",
+      "id": "FS01-T18",
+      "name": "Layer and licence check",
+      "objective": "No GUI/parser/codec backedge; SBOM",
+      "observed_result": "fs01_t18_layering_forbid_unsafe_and_sbom_licence_check PASS: direct normal deps == [sha2, wgpu], 83 resolved crates permissive SPDX, #![forbid(unsafe_code)].",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/LIMITATIONS.md",
+      "fixture_sha256": null,
+      "id": "FS01-T19",
+      "name": "Windows x64 device",
+      "objective": "Actual D3D12 or Vulkan run",
+      "observed_result": "OPEN_PENDING_TARGET_HARDWARE: not executed on macOS BoundedDevelopmentHost; physical target workstation evidence required before closing gate.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence_uri": "evidence/LIMITATIONS.md",
+      "fixture_sha256": null,
+      "id": "FS01-T20",
+      "name": "Linux x64 device",
+      "objective": "Actual Vulkan run",
+      "observed_result": "OPEN_PENDING_TARGET_HARDWARE: not executed on macOS BoundedDevelopmentHost; physical target workstation evidence required before closing gate.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence_uri": "evidence/LIMITATIONS.md",
+      "fixture_sha256": null,
+      "id": "FS01-T21",
+      "name": "Windows/Linux ARM64",
+      "objective": "Separate target device evidence",
+      "observed_result": "OPEN_PENDING_TARGET_HARDWARE: not executed on macOS BoundedDevelopmentHost; physical target workstation evidence required before closing gate.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence_uri": "evidence/PERFORMANCE.md",
+      "fixture_sha256": "876e4593d0eb3decfe4d36b9ff86d738f6966997c17f1acffbf4a14c4e7b7ff5",
+      "id": "FS01-T22",
+      "name": "Performance baseline",
+      "objective": "Warmup/repetitions/medians/peak-memory",
+      "observed_result": "Performance baseline recorded across 5 warmup + 20 measured iterations on 512x512 i16 and 2048x2048 u16 with peak PoolUsageSnapshot telemetry.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/TEST_LOGS/cargo_test_workspace.log",
+      "fixture_sha256": "bd7444826344bc1d7b7e016f9a93baf564ec383e0661ff51a26b1bc8c0bac9ae",
+      "id": "FS01-T23",
+      "name": "Privacy of logs and fixtures",
+      "objective": "No patient data in diagnostics",
+      "observed_result": "fs01_t23_privacy_redaction_of_debug_and_display PASS: sentinel pixel payloads, LPS origins, file paths, and UIDs redacted across Debug/Display and evidence logs.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    },
+    {
+      "evidence_uri": "evidence/LIMITATIONS.md",
+      "fixture_sha256": "8823c12b3d277104b6fb8a760ad2fa36f1d8d9fd1e538fbc2faaa9dab381f7e4",
+      "id": "FS01-T24",
+      "name": "Capability/readiness language",
+      "objective": "No false clinical/3D qualification",
+      "observed_result": "fs01_t24_readme_capability_and_non_clinical_language PASS: README states FS-01 2D-only scope, MPR/MIP/DVR/segmentation exclusions, and non-medical-device notice.",
+      "source_revision": "7ed0d8d5fa67414fc4a6b66c2d04322d4236de55",
+      "status": "PASS"
+    }
+  ],
+  "date": "2026-11-11",
+  "evidence_note": "21/24 verification cases executed and PASS at revision 7ed0d8d5fa67414fc4a6b66c2d04322d4236de55 on aarch64-apple-darwin (QualificationTier::BoundedDevelopmentHost); primary target hardware gates FS01-T19 (Windows x86_64), FS01-T20 (Linux x86_64), and FS01-T21 (ARM64 target) remain NOT_RUN (OPEN_PENDING_TARGET_HARDWARE).",
+  "fixture_set_proposed_version": "fixture-set-0.1.0",
+  "package_version": "0.2.0",
+  "status": "EXECUTED_BOUNDED_DEVELOPMENT_HOST",
+  "title": "DICOMflux-3D FS-01 planned test case manifest"
+}
