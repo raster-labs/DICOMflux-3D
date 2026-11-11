@@ -1,0 +1,250 @@
+{
+  "title": "DICOMflux-3D FS-01 planned test case manifest",
+  "package_version": "0.2.0",
+  "date": "2026-11-10",
+  "status": "PROPOSED_NOT_EXECUTED",
+  "fixture_set_proposed_version": "fixture-set-0.1.0",
+  "evidence_note": "Every test is NOT_RUN. Do not infer completed implementation or qualification.",
+  "cases": [
+    {
+      "id": "FS01-T01",
+      "name": "Build and independent consumer",
+      "objective": "Actual Rust crate and outside-workspace consumer",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T02",
+      "name": "Signed 12-bit i16",
+      "objective": "Sign-extension and immutable source",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T03",
+      "name": "Unsigned 16-bit",
+      "objective": "BitsStored/HighBit and source preservation",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T04",
+      "name": "DICOM LINEAR VOI",
+      "objective": "Endpoints, midpoint, width one and rounding",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T05",
+      "name": "Rescale slope/intercept",
+      "objective": "Finite rescale and source preservation",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T06",
+      "name": "Pixel padding",
+      "objective": "Padding/range masking and background policy",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T07",
+      "name": "MONOCHROME1/2",
+      "objective": "Polarity and final presentation stage",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T08",
+      "name": "Invalid input",
+      "objective": "Nonfinite values, illegal stride, short data",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T09",
+      "name": "Budgets and overflow",
+      "objective": "Huge dimension and bounded refusal",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T10",
+      "name": "2D patient plane",
+      "objective": "LPS spacing and orientation phantom",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T11",
+      "name": "Synthetic regular volume",
+      "objective": "Affine and singular/irregular rejection",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T12",
+      "name": "CPU/GPU agreement",
+      "objective": "Hardware or software adapter labelled with tolerance",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T13",
+      "name": "GPU capability refusals",
+      "objective": "Unsupported format or absent adapter",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T14",
+      "name": "Repeated window change",
+      "objective": "Source unchanged; no decoder/reupload claim",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T15",
+      "name": "GPU cancellation/loss",
+      "objective": "In-flight leases and typed failure",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T16",
+      "name": "Descriptor fuzz",
+      "objective": "No crash/UB/unbounded allocation",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T17",
+      "name": "Output receipt",
+      "objective": "Output dimensions/stride/provenance",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T18",
+      "name": "Layer and licence check",
+      "objective": "No GUI/parser/codec backedge; SBOM",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T19",
+      "name": "Windows x64 device",
+      "objective": "Actual D3D12 or Vulkan run",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T20",
+      "name": "Linux x64 device",
+      "objective": "Actual Vulkan run",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T21",
+      "name": "Windows/Linux ARM64",
+      "objective": "Separate target device evidence",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T22",
+      "name": "Performance baseline",
+      "objective": "Warmup/repetitions/medians/peak-memory",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T23",
+      "name": "Privacy of logs and fixtures",
+      "objective": "No patient data in diagnostics",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    },
+    {
+      "id": "FS01-T24",
+      "name": "Capability/readiness language",
+      "objective": "No false clinical/3D qualification",
+      "status": "NOT_RUN",
+      "source_revision": null,
+      "fixture_sha256": null,
+      "observed_result": null,
+      "evidence_uri": null
+    }
+  ]
+}
